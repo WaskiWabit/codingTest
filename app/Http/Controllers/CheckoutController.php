@@ -132,9 +132,17 @@ class CheckoutController extends Controller
                 $upsell = Upsells::where('code', $utm)->get();
 
                 // if there is an upsell for this utm
-                if ($upsell->count() > 0) {
-                    // grab a random product to upsell
-                    $upsellProduct = Products::inRandomOrder()->first();
+                if ($upsell->count() > 0)
+                {
+                    // return the value of the cookie
+                    $productsArr = json_decode(Cookie::get('products'), true);
+
+                    if(count($productsArr) > 0)
+                    {
+                        // grab a random product to upsell
+                        // and ensure it wasn't a product that was just purchased
+                        $upsellProduct = Products::whereNotIn('id', $productsArr)->inRandomOrder()->first();
+                    }
                 }
             }
 
