@@ -11,4 +11,9 @@
     <p>
         <a href="{{ route('pages.ageAndPriceRange') }}" class="btn btn-primary my-2">Continue to Age & Price Range</a>
     </p>
+    <p><strong>OR</strong></p>
+    <p>
+        <a href="{{ route('pages.index') }}?utm=fb" class="btn btn-secondary my-2">Start Over (UTM - FB)</a>
+        <a href="{{ route('pages.index') }}?utm=youtube" class="btn btn-secondary my-2">Start Over (UTM - YouTube)</a>
+    </p>
 @stop

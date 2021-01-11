@@ -26,6 +26,5 @@
         <div><hr></div>
     @endif
 
-
-        <a href="{{ route('pages.index') }}" class="btn btn-secondary my-2">Start Over</a>
+    <p><a href="{{ route('pages.index') }}" class="btn btn-secondary my-2">Start Over</a></p>
 @stop
