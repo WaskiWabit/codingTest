@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FunnelController;
+use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [FunnelController::class, 'index'])->name('pages.index');
+Route::get('/welcome', [FunnelController::class, 'welcome'])->name('pages.welcome');
+Route::get('/ageAndPriceRange', [FunnelController::class, 'ageAndPriceRange'])->name('pages.ageAndPriceRange');
+Route::post('/ageAndPriceRangeStore', [FunnelController::class, 'storeAgeAndPriceRange'])->name('pages.ageAndPriceRange.store');
+Route::get('/maritalStatus', [FunnelController::class, 'maritalStatus'])->name('pages.maritalStatus');
+Route::post('/maritalStatus', [FunnelController::class, 'storeMaritalStatus'])->name('pages.maritalStatus.store');
+Route::get('/productOffers', [FunnelController::class, 'productOffers'])->name('pages.productOffers');
+Route::post('/productOffers', [FunnelController::class, 'storeProductOffers'])->name('pages.productOffers.store');
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('pages.checkout');
+Route::post('/checkout', [CheckoutController::class, 'storeCheckout'])->name('pages.checkout.store');
+Route::get('/thankyou', [CheckoutController::class, 'thankYou'])->name('pages.thankyou');

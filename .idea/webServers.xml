@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="b7da36c2-0a42-4c22-aff3-c343ad035cd2" name="metabolic.stringersstudios.com" url="http://metabolic.stringersstudios.com">
+        <fileTransfer host="dubterrain.net" port="22" rootFolder="/nfs/c09/h03/mnt/127200/users/.home/domains/metabolic.stringersstudios.com" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
