@@ -12,7 +12,7 @@
     @if(!is_null($upsellProduct))
         <div class="container">
             <div class="row">
-                <p class="lead text-muted">You also might be interested in this product</p>
+                <p class="lead text-muted">You also might be interested in this UPSELL product :)</p>
                     <div class="col">
                         <div><img src="{{ $upsellProduct->img_url }}" width="250" height="188" alt="{{ $upsellProduct->name }}" /></div>
                         <div>
