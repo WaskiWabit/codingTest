@@ -32,7 +32,7 @@
             <p><strong>SubTotal:</strong> ${{ number_format($subTotal, 2) }}</p>
 
             @foreach ($discountAmounts as $discount)
-                <p><strong>Discount:</strong> {{ $discount->name }}/{{ $discount->code }} (<i>{{ $discount->description }}</i>)</p>
+                <p><strong>Discount:</strong> {{ $discount->name }}/{{ ucfirst($discount->code) }} (<i>{{ $discount->description }}</i>)</p>
             @endforeach
             <p><strong>Grand Total:</strong> ${{ number_format($grandTotal, 2) }}</p>
         </div>
