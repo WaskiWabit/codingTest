@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Requests;
 use App\Helpers\Utm;
-use App\Helpers\IpAddress;
-use App\Models\Products;
 use App\Models\ProductMapping;
 
 /**
@@ -19,6 +17,10 @@ class FunnelController extends Controller
 {
     const cookieLifetime = 30;
 
+    /**
+     * @param Request $request
+     * @return mixed
+     */
     public function index(Request $request)
     {
         // array to hold user data
@@ -45,18 +47,28 @@ class FunnelController extends Controller
         return redirect()->action([self::class, 'welcome']);
     }
 
+    /**
+     * @return mixed
+     */
     public function welcome()
     {
         // return a response to view welcome page
         return response()->view('pages.welcome');
     }
 
+    /**
+     * @return mixed
+     */
     public function ageAndPriceRange()
     {
         // return a response to view age & price range page
         return response()->view('pages.ageAndPriceRange');
     }
 
+    /**
+     * @param Request $request
+     * @return mixed
+     */
     public function storeAgeAndPriceRange(Request $request)
     {
         // validate incoming request
@@ -84,6 +96,9 @@ class FunnelController extends Controller
         return redirect()->action([self::class, 'maritalStatus']);
     }
 
+    /**
+     * @return mixed
+     */
     public function maritalStatus()
     {
         // if userData cookie is set
@@ -105,6 +120,10 @@ class FunnelController extends Controller
         return redirect()->action([self::class, 'index']);
     }
 
+    /**
+     * @param Request $request
+     * @return mixed
+     */
     public function storeMaritalStatus(Request $request)
     {
         // validate incoming request
@@ -130,6 +149,9 @@ class FunnelController extends Controller
         return redirect()->action([self::class, 'productOffers']);
     }
 
+    /**
+     * @return mixed
+     */
     public function productOffers()
     {
         // if userData cookie is set
@@ -190,6 +212,10 @@ class FunnelController extends Controller
         return redirect()->action([self::class, 'index']);
     }
 
+    /**
+     * @param Request $request
+     * @return mixed
+     */
     public function storeProductOffers(Request $request)
     {
         // validate incoming request

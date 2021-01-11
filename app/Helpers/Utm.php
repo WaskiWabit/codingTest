@@ -3,6 +3,10 @@ namespace App\Helpers;
 
 class Utm
 {
+    /**
+     * @param $utm
+     * @return bool
+     */
     public static function validateUtm($utm)
     {
         $utm = strtolower($utm);

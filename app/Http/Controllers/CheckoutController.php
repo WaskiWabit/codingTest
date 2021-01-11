@@ -11,6 +11,10 @@ use App\Models\Upsells;
 
 class CheckoutController extends Controller
 {
+    /**
+     * @param Request $request
+     * @return mixed
+     */
     public function index(Request $request)
     {
         // see if cookies are set with given names
@@ -98,6 +102,10 @@ class CheckoutController extends Controller
         return redirect()->action([FunnelController::class, 'index']);
     }
 
+    /**
+     * @param Request $request
+     * @return mixed
+     */
     public function storeCheckout(Request $request)
     {
         $productsArr = [];
@@ -113,6 +121,9 @@ class CheckoutController extends Controller
         return redirect()->action([FunnelController::class, 'index']);
     }
 
+    /**
+     * @return mixed
+     */
     public function thankYou()
     {
         // see if cookies are set with given names
